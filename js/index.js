@@ -90,3 +90,12 @@ textContentSections[3].children[1].textContent = siteContent["main-content"]["pr
 textContentSections[4].children[0].textContent = siteContent["main-content"]["vision-h4"]
 textContentSections[4].children[1].textContent = siteContent["main-content"]["vision-content"]
 
+
+const contactH4 = document.querySelector('.contact h4')
+contactH4.textContent = siteContent.contact["contact-h4"]
+
+const contactSectionParagraphs = document.querySelectorAll('.contact p')
+
+contactSectionParagraphs[0].textContent = siteContent.contact.address
+contactSectionParagraphs[1].textContent = siteContent.contact.phone
+contactSectionParagraphs[2].textContent = siteContent.contact.email
