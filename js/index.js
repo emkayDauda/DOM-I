@@ -58,3 +58,35 @@ ctaText[1].textContent = siteContent.cta.button
 
 let ctaLogo = document.getElementById("cta-img");
 ctaLogo.setAttribute('src', siteContent["cta"]["img-src"])
+
+//Get all elements with class name `text-content`
+var textContentSections = document.getElementsByClassName('text-content')
+
+//Traverse through `textContentSections` using array notation. First is the Features section, so the children of that is obtained and their text content is set resoectively...
+
+textContentSections[0].children[0].textContent = siteContent["main-content"]["features-h4"]
+textContentSections[0].children[1].textContent = siteContent["main-content"]["features-content"]
+
+
+
+textContentSections[1].children[0].textContent = siteContent["main-content"]["about-h4"]
+textContentSections[1].children[1].textContent = siteContent["main-content"]["about-content"]
+
+
+let mainImage = document.getElementById("middle-img");
+mainImage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+textContentSections[2].children[0].textContent = siteContent["main-content"]["services-h4"]
+textContentSections[2].children[1].textContent = siteContent["main-content"]["services-content"]
+
+
+
+textContentSections[3].children[0].textContent = siteContent["main-content"]["product-h4"]
+textContentSections[3].children[1].textContent = siteContent["main-content"]["product-content"]
+
+
+
+textContentSections[4].children[0].textContent = siteContent["main-content"]["vision-h4"]
+textContentSections[4].children[1].textContent = siteContent["main-content"]["vision-content"]
+
