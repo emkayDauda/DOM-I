@@ -109,3 +109,6 @@ const contactSectionParagraphs = document.querySelectorAll('.contact p')
 contactSectionParagraphs[0].textContent = siteContent.contact.address
 contactSectionParagraphs[1].textContent = siteContent.contact.phone
 contactSectionParagraphs[2].textContent = siteContent.contact.email
+
+const footer = document.getElementsByTagName('footer')[0];
+footer.children[0].textContent = siteContent.footer.copyright
