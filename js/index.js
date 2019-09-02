@@ -42,8 +42,18 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //Set Nav content
-const navItems = document.querySelector('nav').children;
-const navItemsArray = Array.from(navItems)
+const navItems = document.querySelector('nav');
+const navItemsArray = Array.from(navItems.children)
+
+const aNewAnchor = document.createElement('a')
+aNewAnchor.setAttribute('href', 'https://www.facebook.com')
+aNewAnchor.textContent = 'Facebook'
+navItems.prepend(aNewAnchor)
+
+const twitterTag = document.createElement('a')
+twitterTag.setAttribute('href', 'https://www.twitter.com')
+twitterTag.textContent = 'Twitter'
+navItems.appendChild(twitterTag)
 
 navItemsArray.forEach((navItem, index) => {
   const key = "nav-item-" + Number(index + 1);
