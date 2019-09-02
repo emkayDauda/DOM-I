@@ -50,3 +50,11 @@ navItemsArray.forEach((navItem, index) => {
   console.log(key)
   navItem.textContent = siteContent.nav[key]
 })
+
+//Fill out CTA section using the children function of the class
+const ctaText = document.querySelector('.cta-text').children
+ctaText[0].textContent = siteContent.cta.h1
+ctaText[1].textContent = siteContent.cta.button
+
+let ctaLogo = document.getElementById("cta-img");
+ctaLogo.setAttribute('src', siteContent["cta"]["img-src"])
