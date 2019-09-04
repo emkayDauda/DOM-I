@@ -40,3 +40,75 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+//Set Nav content
+const navItems = document.querySelector('nav');
+const navItemsArray = Array.from(navItems.children)
+
+const aNewAnchor = document.createElement('a')
+aNewAnchor.setAttribute('href', 'https://www.facebook.com')
+aNewAnchor.textContent = 'Facebook'
+navItems.prepend(aNewAnchor)
+
+const twitterTag = document.createElement('a')
+twitterTag.setAttribute('href', 'https://www.twitter.com')
+twitterTag.textContent = 'Twitter'
+navItems.appendChild(twitterTag)
+
+navItemsArray.forEach((navItem, index) => {
+  const key = "nav-item-" + Number(index + 1);
+  console.log(key)
+  navItem.textContent = siteContent.nav[key]
+})
+
+//Fill out CTA section using the children function of the class
+const ctaText = document.querySelector('.cta-text').children
+ctaText[0].textContent = siteContent.cta.h1
+ctaText[1].textContent = siteContent.cta.button
+
+let ctaLogo = document.getElementById("cta-img");
+ctaLogo.setAttribute('src', siteContent["cta"]["img-src"])
+
+//Get all elements with class name `text-content`
+var textContentSections = document.getElementsByClassName('text-content')
+
+//Traverse through `textContentSections` using array notation. First is the Features section, so the children of that is obtained and their text content is set resoectively...
+
+textContentSections[0].children[0].textContent = siteContent["main-content"]["features-h4"]
+textContentSections[0].children[1].textContent = siteContent["main-content"]["features-content"]
+
+
+
+textContentSections[1].children[0].textContent = siteContent["main-content"]["about-h4"]
+textContentSections[1].children[1].textContent = siteContent["main-content"]["about-content"]
+
+
+let mainImage = document.getElementById("middle-img");
+mainImage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+textContentSections[2].children[0].textContent = siteContent["main-content"]["services-h4"]
+textContentSections[2].children[1].textContent = siteContent["main-content"]["services-content"]
+
+
+
+textContentSections[3].children[0].textContent = siteContent["main-content"]["product-h4"]
+textContentSections[3].children[1].textContent = siteContent["main-content"]["product-content"]
+
+
+
+textContentSections[4].children[0].textContent = siteContent["main-content"]["vision-h4"]
+textContentSections[4].children[1].textContent = siteContent["main-content"]["vision-content"]
+
+
+const contactH4 = document.querySelector('.contact h4')
+contactH4.textContent = siteContent.contact["contact-h4"]
+
+const contactSectionParagraphs = document.querySelectorAll('.contact p')
+
+contactSectionParagraphs[0].textContent = siteContent.contact.address
+contactSectionParagraphs[1].textContent = siteContent.contact.phone
+contactSectionParagraphs[2].textContent = siteContent.contact.email
+
+const footer = document.getElementsByTagName('footer')[0];
+footer.children[0].textContent = siteContent.footer.copyright
